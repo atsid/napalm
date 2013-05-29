@@ -1,5 +1,10 @@
 /**
- * Module dependencies.
+ * Server app that responds to requests for files belonging to a particular version
+ * of a particular library that has been published to npm.
+ *
+ * e.g. a request to napalm-host/underscore/1.4.4/underscore.js will be fulfilled if the
+ * underscore@1.4.4 has been published to npm and the file underscore.js exists in it's
+ * root directory.
  */
 
 var express = require('express')

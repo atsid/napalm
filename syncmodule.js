@@ -1,3 +1,7 @@
+/**
+ * Module that retrieves npm published modules and makes them available
+ * for serving if they do not already exist on this server.
+ */
 var npm = require("npm")
     , path = require("path")
     , fs = require("fs")
