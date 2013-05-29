@@ -12,7 +12,7 @@ The server installs and caches the npm modules it attempts to serve.
 Self-contained express app server:
 ```
 npm install; // to install that app once cloned
-npm main; // to run the express app
+node app; // to run the express app
 ```
 
 http://host:4000 // to access the app locally.
