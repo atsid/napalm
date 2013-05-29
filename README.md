@@ -1,7 +1,7 @@
 napalm
 ===============
 
-An express server that automatically serves up libraries published to npm.
+An express server that serves up libraries published to npm.
 
 A request of the form: http://napalm-server/underscore/1.4.4/underscore.js will result in the
 underscore.js file being served if underscore@1.4.4 has been published to npm and that file exists
