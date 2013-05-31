@@ -9,8 +9,10 @@ var npm = require("npm")
     , fs_extra = require("fs-extra")
     ;
 
-function log_error(err) {
-    console.log(err);
+function log_error(err, msg) {
+    if (err) {
+        console.log(msg + " : " + err);
+    }
 };
 
 module.exports = function (req, res) {
@@ -23,17 +25,24 @@ module.exports = function (req, res) {
     fs.stat(path, function (err, stats) {
         if (err) {
             fs_extra.mkdirp(servePath, function (err) {
-                log_error(err);
+                log_error(err, "At make serve path - " + servePath);
                 fs_extra.mkdirp(path, function (err) {
-                    log_error(err);
+                    log_error(err, "At make staging path - " + path);
                     npm.load({}, function (err) {
-                        log_error(err);
+                        log_error(err, "on npm load ");
                         var tmp = npm.commands.install(path, [package], function (err) {
-                            fs_extra.copy(stagePath, servePath, function (err) {
-                                log_error(err);
+                            log_error(err, "At npm install - " + path + " : " + package);
+                            if (!err) {
+                                fs_extra.copy(stagePath, servePath, function (err) {
+                                    log_error(err, "At copy - " + stagePath + " : " + servePath);
+                                    console.log("installed: " + package);
+                                    req.next();
+                                });
+                            } else {
+                                fs_extra.remove(path);
+                                fs_extra.remove(servePath);
                                 req.next();
-                                console.log("installed: " + package);
-                            });
+                            }
                         });
                     });
                 })
