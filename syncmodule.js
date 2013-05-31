@@ -28,7 +28,7 @@ module.exports = function (req, res) {
                 log_error(err, "At make serve path - " + servePath);
                 fs_extra.mkdirp(path, function (err) {
                     log_error(err, "At make staging path - " + path);
-                    npm.load({}, function (err) {
+                    npm.load({cache: cwd + "/npm-cache"}, function (err) {
                         log_error(err, "on npm load ");
                         var tmp = npm.commands.install(path, [package], function (err) {
                             log_error(err, "At npm install - " + path + " : " + package);
