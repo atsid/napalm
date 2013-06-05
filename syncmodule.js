@@ -25,7 +25,6 @@ module.exports = function (req, res) {
     fs.stat(path, function (err, stats) {
         if (err) {
             process.env["HOME"] = cwd;
-            console.log(process.env);
             fs_extra.mkdirp(servePath, function (err) {
                 log_error(err, "At make serve path - " + servePath);
                 fs_extra.mkdirp(path, function (err) {
