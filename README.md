@@ -1,3 +1,5 @@
+[![Dependency Status](https://david-dm.org/atsid/napalm.svg)](https://david-dm.org/atsid/napalm)
+
 napalm
 ===============
 
