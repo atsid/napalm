@@ -1,5 +1,8 @@
 [![Code Climate](https://codeclimate.com/github/atsid/napalm/badges/gpa.svg)](https://codeclimate.com/github/atsid/napalm)
+[![Build Status](https://travis-ci.org/atsid/napalm.svg?branch=master)](https://travis-ci.org/atsid/napalm)
 [![Dependency Status](https://david-dm.org/atsid/napalm.svg)](https://david-dm.org/atsid/napalm)
+[![Dev Dependency Status](https://david-dm.org/atsid/dev-status/napalm.svg)](https://david-dm.org/atsid/napalm)
+
 
 napalm
 ===============
